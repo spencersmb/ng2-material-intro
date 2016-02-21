@@ -4,13 +4,6 @@ import {MdSidenav} from "ng2-material/components/sidenav/sidenav";
 import {Media} from "ng2-material/core/util/media";
 import {Device} from "../../services/device";
 
-function getWindowSize() {
-  return {
-    height: window.innerHeight,
-    width: window.innerWidth
-  };
-}
-
 @Component({
     selector: 'sidenav',
     directives:[MATERIAL_DIRECTIVES],
@@ -46,7 +39,7 @@ export class SideNav {
   }
   getWindowSize(): void{
     this.device.loadWindow()
-      .map(getWindowSize)
+      .map(this.device.newWindowSize)
       .subscribe(res => this.renderTrack(res));
   }
   renderTrack(res: any): void {

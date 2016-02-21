@@ -25,8 +25,6 @@ import {SideNav} from '../sidenav/sidenav';
 ])
 export class AppCmp {
 
-
-
   constructor(){
 
   }
